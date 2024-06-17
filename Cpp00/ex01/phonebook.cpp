@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 03:07:50 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/06/16 16:43:45 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/06/17 13:40:38 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,12 @@ void	PhoneBook::search(void)
 		switch(state)
 		{
 			case SEARCH:
+				if (initialized_ == 0)
+				{
+					std::cout << "Phonebook is empty." << std::endl;
+					state = IDLE;
+					continue ;
+				}
 				printContacts();
 				std::cout << "Please enter contact index for more details." \
 					<< std::endl;
