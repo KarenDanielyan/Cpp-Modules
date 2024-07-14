@@ -31,7 +31,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/ex01/phonebook",
+      "program": "${workspaceFolder}/Cpp01/ex01/morebrainzzz",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
