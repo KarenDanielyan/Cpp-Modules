@@ -1,8 +1,8 @@
-NAME	=	brainzzz
+NAME	=	morebrainzzz
 
 BUILD	=	build
 
-SRC		=	main.cpp Zombie.cpp 
+SRC		=	main.cpp Zombie.cpp zombieHorde.cpp
 
 INC		=	Zombie.h
 

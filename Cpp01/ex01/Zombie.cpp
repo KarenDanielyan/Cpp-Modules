@@ -6,15 +6,17 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 19:00:16 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/01 19:20:24 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/14 17:09:34 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.h"
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib>
 
 Zombie::Zombie(std::string name): name(name) {}
+
+Zombie::Zombie(): name("Carl") {}
 
 Zombie::~Zombie(void)
 {
@@ -32,7 +34,7 @@ Zombie	*newZombie(std::string name)
 	Zombie	*z;
 
 	z = new Zombie(name);
-	if (z == nullptr)
+	if (z == NULL)
 		exit(EXIT_FAILURE);
 	return (z);
 }

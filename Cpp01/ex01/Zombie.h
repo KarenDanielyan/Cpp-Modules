@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:55:33 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/01 19:19:59 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/14 15:58:23 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 class Zombie
 {
 	public:
+		Zombie();
 		Zombie(std::string name);
 		~Zombie();
 		void	announce();
@@ -32,6 +33,7 @@ class Zombie
 };
 
 Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
+
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif
