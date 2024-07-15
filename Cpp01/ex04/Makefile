@@ -1,10 +1,10 @@
-NAME	=	unnessesaryViolence
+NAME	=	sedIsForLosers
 
 BUILD	=	build
 
-SRC		=	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC		=	main.cpp
 
-INC		=	HumanA.h HumanB.h Weapon.h
+INC		=	
 
 OBJS	=	$(patsubst %.cpp, $(BUILD)/%.o, $(SRC))
 
