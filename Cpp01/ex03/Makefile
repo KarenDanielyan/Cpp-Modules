@@ -1,4 +1,4 @@
-NAME	=	unnessesaryViolence
+NAME	=	unnecessaryViolence
 
 BUILD	=	build
 
