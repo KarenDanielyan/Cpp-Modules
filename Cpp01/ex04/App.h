@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 23:42:50 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/17 16:00:03 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:23:37 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ class App
 			EXIT
 		};
 	private:
-		std::ifstream	in_file_;
-		std::ofstream	out_file_;
-		std::string		to_replace_;
-		std::string		replace_with_;
-		State_e			state_;
+		std::ifstream	in_file;
+		std::ofstream	out_file;
+		std::string		to_replace;
+		std::string		replace_with;
+		State_e			state;
 };
 
 #endif
