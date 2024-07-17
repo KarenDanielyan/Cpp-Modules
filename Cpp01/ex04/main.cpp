@@ -6,12 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 17:48:02 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/15 18:15:26 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:00:22 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
+#include "App.h"
 
 int	main(int ac, char **av)
 {
@@ -20,12 +19,7 @@ int	main(int ac, char **av)
 		std::cout << "Usage: <file> <string-to-replace> <string-to-replace-with>" << std::endl;
 		return (1);
 	}
-	std::ifstream	ifs(av[1]);
-	if (!ifs.is_open())
-	{
-		std::cout << "Error: file does not exist." << std::endl;
-	}
-	(void)ac;
-	(void)av;
+	App	app(av[1], av[2], av[3]);
+	app.run();
 	return (0);
 }

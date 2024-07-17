@@ -2,9 +2,9 @@ NAME	=	sedIsForLosers
 
 BUILD	=	build
 
-SRC		=	main.cpp
+SRC		=	main.cpp App.cpp
 
-INC		=	
+INC		=	App.h
 
 OBJS	=	$(patsubst %.cpp, $(BUILD)/%.o, $(SRC))
 
@@ -14,7 +14,7 @@ DEP		=	$(INC) Makefile
 
 CXX			=	c++
 
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g # -fsanitize=address
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
 
 INCFLAGS	=	-I .
 
