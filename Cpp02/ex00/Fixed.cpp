@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 20:25:20 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/18 21:00:08 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/18 21:10:55 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ Fixed::Fixed(void): raw_bits(0)
 		RESET << std::endl;
 }
 
-Fixed::Fixed(const Fixed &other): raw_bits(other.raw_bits)
+Fixed::Fixed(const Fixed &other)
 {
 	std::cout << BLUE << "[ Copy constructor called ]" << \
 		RESET << std::endl;
+	*this = other;
 }
 
 Fixed::~Fixed(void)
