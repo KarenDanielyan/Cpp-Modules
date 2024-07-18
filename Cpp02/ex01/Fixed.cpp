@@ -6,12 +6,17 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 20:25:20 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/18 21:56:36 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/19 00:09:30 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.h"
 #include <iostream>
+#include <cmath>
+
+/*
+ * 	Source: https://medium.com/incredible-coder/converting-fixed-point-to-floating-point-format-and-vice-versa-6cbc0e32544e
+ */
 
 Fixed::Fixed(void): raw_bits(0)
 {
@@ -26,12 +31,24 @@ Fixed::Fixed(const Fixed &other)
 	*this = other;
 }
 
+Fixed::Fixed(const float f)
+{
+	std::cout << YELLOW << "[ Float constructor called. ]" << std::endl;
+	raw_bits = roundf(f * (1 << fractional_bits));
+}
+
+Fixed::Fixed(const int i)
+{
+	std::cout << YELLOW "[ Int constructor called. ]" << std::endl;
+	raw_bits = i * (1 << fractional_bits);
+}
+
 Fixed::~Fixed(void)
 {
 	std::cout << RED << "[ Destructor called ]" << RESET << std::endl;
 }
 
-Fixed &Fixed::operator=(const Fixed &other)
+Fixed	&Fixed::operator=(const Fixed &other)
 {
 	std::cout << YELLOW << "[ Copy assignment operator called ]" \
 		<< RESET << std::endl;
@@ -39,9 +56,10 @@ Fixed &Fixed::operator=(const Fixed &other)
 	return (*this);
 }
 
-std::ostream	&operator<<(std::ostream out, const Fixed &self)
+std::ostream	&operator<<(std::ostream &out, Fixed const &self)
 {
-	return "42";
+	out << self.toFloat();
+	return (out);
 }
 
 int	Fixed::getRawBits(void) const
@@ -56,7 +74,7 @@ void	Fixed::setRawBits(int raw)
 	this->raw_bits = raw;
 }
 
-float	Fixed::toFloat()
+float	Fixed::toFloat() const
 {
 	float	f_rep;
 
@@ -69,7 +87,7 @@ float	Fixed::toFloat()
  * 			we will have memory overflow from the stack segments before the 
  * 			variable.
  */
-int		Fixed::toInt()
+int		Fixed::toInt() const
 {
 	return (raw_bits / (1 << fractional_bits));
 }
