@@ -30,7 +30,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/Cpp02/ex02/fixed",
+      "program": "${workspaceFolder}/Cpp02/ex03/bsp",
       "args": [],
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 20:25:01 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/19 19:10:58 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:21:03 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ static void	test(const Point &A, const Point &B, const Point &C, const Point &P,
 
 int main()
 {
-	// std::cout << "-- TEST 1 --" << std::endl;
-	// test(Point(1, 1), Point(4, 1), Point(2, 5), Point(3, 3), true);
-	// std::cout << "-- TEST 2 --" << std::endl;
-	// test(Point(0, 0), Point(4, 0), Point(2, 4), Point(2, 2), true);
-	// std::cout << "-- TEST 3 --" << std::endl;
-	// test(Point(2, 1), Point(6, 1), Point(4, 5), Point(4, 2), true);
-	// std::cout << "-- TEST 4 --" << std::endl;
-	test(Point(1, 1), Point(4, 1), Point(2, 5), Point(5, 3), false);
+	std::cout << "-- TEST 1 --" << std::endl;
+	test(Point(1, 1), Point(4, 1), Point(2, 5), Point(1.8, 3), true);
+	std::cout << "-- TEST 2 --" << std::endl;
+	test(Point(0, 0), Point(4, 0), Point(2, 4), Point(2, 2), true);
+	std::cout << "-- TEST 3 --" << std::endl;
+	test(Point(2, 1), Point(6, 1), Point(4, 5), Point(40, 2), false);
+	std::cout << "-- TEST 4 --" << std::endl;
+	test(Point(1, 1), Point(4, 1), Point(2, 5), Point(10, 3), false);
 	std::cout << "-- TEST 5 --" << std::endl;
-	// test(Point(1, 1), Point(4, 1), Point(2, 5), Point(3, 2), false);
-	// std::cout << "-- TEST 6 --" << std::endl;
-	// test(Point(1, 1), Point(4, 1), Point(2, 5), Point(0, 0), false);
-	// std::cout << "-- TEST 7 --" << std::endl;
-	// test(Point(1, 1), Point(4, 1), Point(2, 5), Point(1, 1), true);
+	test(Point(1, 1), Point(4, 1), Point(2, 5), Point(3, 2), true);
+	std::cout << "-- TEST 6 --" << std::endl;
+	test(Point(1, 1), Point(4, 1), Point(2, 5), Point(0, 0), false);
+	std::cout << "-- TEST 7 --" << std::endl;
+	test(Point(1, 1), Point(4, 1), Point(2, 5), Point(2, 1.10156), true);
 	return 0;
 }

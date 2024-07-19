@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:16:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/19 18:45:19 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:18:07 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	Fixed	sPBC = abs(areaSquared(point, b, c));
 	Fixed	sPAC = abs(areaSquared(point, a, c));
 
+	if (sPAB == 0 || sPBC == 0 || sPAC == 0)
+		return (false);
 	return (sABC == (sPAB + sPBC + sPAC));
 }
