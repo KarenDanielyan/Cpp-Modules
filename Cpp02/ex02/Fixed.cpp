@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 20:25:20 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/19 01:41:59 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/19 16:32:39 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,8 @@ Fixed	Fixed::operator-(const Fixed &other) const
 
 Fixed	Fixed::operator*(const Fixed &other) const
 {
-	return (this->raw_bits * other.raw_bits);
+	Fixed	temp(this->toFloat() * other.toFloat());
+	return (temp);
 }
 
 Fixed	Fixed::operator/(const Fixed &other) const
@@ -152,3 +153,58 @@ bool	Fixed::operator<(const Fixed &other) const
 	return (this->raw_bits < other.raw_bits);
 }
 
+Fixed	Fixed::operator++(int)
+{
+	Fixed	temp(*this);
+	this->raw_bits += 1;
+	return (temp);
+}
+
+Fixed	Fixed::operator++()
+{
+	this->raw_bits += 1;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	temp(*this);
+	this->raw_bits -= 1;
+	return (temp);
+}
+
+Fixed	Fixed::operator--()
+{
+	this->raw_bits -= 1;
+	return (*this);
+}
+
+/* ** Compare methods ** */
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}

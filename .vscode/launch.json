@@ -30,8 +30,8 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/Cpp01/ex04/sedIsForLosers",
-      "args": ["${workspaceFolder}/Cpp01/ex04/test", "TALK", "12"],
+      "program": "${workspaceFolder}/Cpp02/ex02/fixed",
+      "args": [],
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

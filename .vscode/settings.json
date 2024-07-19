@@ -162,7 +162,8 @@
     "optional": "cpp",
     "ios": "cpp",
     "locale": "cpp",
-    "mutex": "cpp"
+    "mutex": "cpp",
+    "fstream": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "python.analysis.typeCheckingMode": "basic"
