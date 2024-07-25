@@ -5,21 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/15 17:48:02 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/25 15:29:26 by kdaniely         ###   ########.fr       */
+/*   Created: 2024/07/25 15:39:18 by kdaniely          #+#    #+#             */
+/*   Updated: 2024/07/25 15:40:01 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "App.h"
+#include <iostream>
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	if (ac != 4)
-	{
-		std::cout << "Usage: <file> <string-to-replace> <string-to-replace-with>" << std::endl;
-		return (1);
-	}
-	App	app(av[1], av[2], av[3]);
-	app.run();
+	std::cout << "Hello World\n";
 	return (0);
 }
