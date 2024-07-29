@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kdaniely <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 15:39:18 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/29 14:18:06 by kdaniely         ###   ########.fr       */
+/*   Created: 2024/07/29 16:04:32 by kdaniely          #+#    #+#             */
+/*   Updated: 2024/07/29 16:06:03 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef DOG_H
+# define DOG_H
 
-int	main(void)
+# include "Animal.h"
+
+class	Dog: public Animal
 {
-	std::cout << "Hello World\n";
-	return (0);
+	public:
+		Dog(void);
+		Dog(const Dog& other);
+
+		~Dog(void);
+
+		Dog&	operator=(const Dog& other);
 }
+
+#endif
