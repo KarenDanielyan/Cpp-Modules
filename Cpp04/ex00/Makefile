@@ -2,9 +2,9 @@ NAME	=	Polymorphism
 
 BUILD	=	build
 
-SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
-INC		=	Animal.h Cat.h Dog.h
+INC		=	Animal.h Cat.h Dog.h WrongCat.h WrongAnimal.h
 
 OBJS	=	$(patsubst %.cpp, $(BUILD)/%.o, $(SRC))
 

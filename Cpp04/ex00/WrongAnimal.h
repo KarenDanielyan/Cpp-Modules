@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.h                                              :+:      :+:    :+:   */
+/*   WrongAnimal.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 23:18:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/29 23:54:39 by kdaniely         ###   ########.fr       */
+/*   Created: 2024/07/30 00:06:28 by kdaniely          #+#    #+#             */
+/*   Updated: 2024/07/30 00:13:44 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef WRONGANIMAL_H
+# define WRONGANIMAL_H
 
+# include <string>
 # include "Animal.h"
 
-class Cat : public Animal
+class WrongAnimal
 {
+protected:
+	std::string	type;
 public:
-	Cat(void);
-	Cat(const Cat& other);
+	WrongAnimal(void);
+	WrongAnimal(const std::string type);
+	WrongAnimal(const WrongAnimal& other);
 
-	~Cat(void);
-
-	Cat&	operator=(const Cat& other);
+	WrongAnimal&	operator=(const WrongAnimal& other);
+	~WrongAnimal();
 
 	void	makeSound(void);
 };

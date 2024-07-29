@@ -1,51 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 15:42:35 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/29 23:56:06 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/30 00:11:47 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.h"
+#include "WrongAnimal.h"
 #include <iostream>
 
-Animal::Animal(void): type("Bob")
+WrongAnimal::WrongAnimal(void): type("Bob")
 {
-	std::cout << GREEN << "[ Animal default constructor called ]" \
+	std::cout << GREEN << "[ WrongAnimal default constructor called ]" \
 		<< RESET << std::endl;
 }
 
-Animal::Animal(const std::string type): type(type)
+WrongAnimal::WrongAnimal(const std::string type): type(type)
 {
-	std::cout << GREEN << "[ Animal parametrized constructor called ]" \
+	std::cout << GREEN << "[ WrongAnimal parametrized constructor called ]" \
 		<< RESET << std::endl;
 }
 
-Animal::Animal(const Animal& other): type(other.type)
+WrongAnimal::WrongAnimal(const WrongAnimal& other): type(other.type)
 {
-	std::cout << GREEN << "[ Animal copy-constructor called ]" \
+	std::cout << GREEN << "[ WrongAnimal copy-constructor called ]" \
 		<< RESET << std::endl;
 }
 
-Animal::~Animal(void)
+WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << RED << "[ Animal destructor called ]" \
+	std::cout << RED << "[ WrongAnimal destructor called ]" \
 		<< RESET << std::endl;
 }
 
-Animal	&Animal::operator=(const Animal& other)
+WrongAnimal	&WrongAnimal::operator=(const WrongAnimal& other)
 {
 	this->type = other.type;
-	std::cout << GREEN << "[ Animal assignment operator called ]" \
+	std::cout << GREEN << "[ WrongAnimal assignment operator called ]" \
 		<< RESET << std::endl;
 	return (*this);
 }
 
-void	Animal::makeSound(void)
+void	WrongAnimal::makeSound(void)
 {
-	std::cout << "* GENERIC ANIMAL VOICES *" << std::endl;
+	std::cout << "* GENERIC WRONG ANIMAL VOICES *" << std::endl;
 }

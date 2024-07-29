@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.h                                              :+:      :+:    :+:   */
+/*   WrongCat.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 23:18:44 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/29 23:54:39 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/30 00:08:15 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef WRONGCAT_H
+# define WRONGCAT_H
 
-# include "Animal.h"
+# include "WrongAnimal.h"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 public:
-	Cat(void);
-	Cat(const Cat& other);
+	WrongCat(void);
+	WrongCat(const WrongCat& other);
 
-	~Cat(void);
+	~WrongCat(void);
 
-	Cat&	operator=(const Cat& other);
+	WrongCat&	operator=(const WrongCat& other);
 
 	void	makeSound(void);
 };

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdaniely <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 16:04:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/29 16:06:03 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/29 23:54:43 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class	Dog: public Animal
 		~Dog(void);
 
 		Dog&	operator=(const Dog& other);
-}
+
+		void	makeSound(void);
+};
 
 #endif

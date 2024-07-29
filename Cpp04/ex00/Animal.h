@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 15:58:41 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/29 16:03:10 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/29 23:55:25 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ protected:
 	std::string	type;
 public:
 	Animal(void);
+	Animal(const std::string type);
 	Animal(const Animal& other);
 
 	Animal&	operator=(const Animal& other);

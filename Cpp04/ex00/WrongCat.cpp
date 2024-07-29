@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 23:23:45 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/29 23:56:43 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/07/30 00:10:33 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
+#include "WrongCat.h"
 #include <iostream>
 
-Cat::Cat(void): Animal("Cat")
+WrongCat::WrongCat(void): WrongAnimal("WrongCat")
 {
-	std::cout << GREEN << "[ Cat default constructor called ]" \
+	std::cout << GREEN << "[ WrongCat default constructor called ]" \
 		<< RESET << std::endl;
 }
 
-Cat::Cat(const Cat& other): Animal(other)
+WrongCat::WrongCat(const WrongCat& other): WrongAnimal(other)
 {
-	std::cout << GREEN << "[ Cat copy constructor called ]" \
+	std::cout << GREEN << "[ WrongCat copy constructor called ]" \
 		<< RESET << std::endl;
 }
 
-Cat&	Cat::operator=(const Cat& other)
+WrongCat&	WrongCat::operator=(const WrongCat& other)
 {
 	this->type = other.type;
-	std::cout << GREEN << "[ Cat copy assignment operator called ]" \
+	std::cout << GREEN << "[ WrongCat copy assignment operator called ]" \
 		<< RESET << std::endl;
 	return (*this);
 }
 
-Cat::~Cat(void)
+WrongCat::~WrongCat(void)
 {
-	std::cout << RED << "[ Cat destructor called ]" \
+	std::cout << RED << "[ WrongCat destructor called ]" \
 		<< RESET << std::endl;
 }
 
-void	Cat::makeSound(void)
+void	WrongCat::makeSound(void)
 {
 	std::cout << BLUE << "* MEOW *" << RESET << std::endl;
 }
