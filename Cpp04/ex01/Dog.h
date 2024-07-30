@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.h                                           :+:      :+:    :+:   */
+/*   Dog.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 15:58:41 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/30 20:27:44 by kdaniely         ###   ########.fr       */
+/*   Created: 2024/07/29 16:04:32 by kdaniely          #+#    #+#             */
+/*   Updated: 2024/07/30 19:57:24 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef DOG_H
+# define DOG_H
 
-# include <string>
+# include "Animal.h"
+# include "Brain.h"
 
-# define BLUE "\033[34m"
-# define GREEN "\033[32m"
-# define YELLOW "\033[33m"
-# define RED "\033[31m"
-# define CYAN "\033[36m"
-# define RESET "\033[0m"
-
-class Animal
+class	Dog: public Animal
 {
-protected:
-	std::string	type;
+private:
+	Brain*	_brain;
 public:
-	Animal(void);
-	Animal(const std::string type);
-	Animal(const Animal& other);
+	Dog(void);
+	Dog(const Dog& other);
 
-	Animal&	operator=(const Animal& other);
-	virtual ~Animal();
+	~Dog(void);
 
-	virtual void	makeSound(void);
+	Dog&	operator=(const Dog& other);
+
+	void	makeSound(void);
 };
 
 #endif

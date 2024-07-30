@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.h                                           :+:      :+:    :+:   */
+/*   WrongAnimal.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 15:58:41 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/30 20:27:44 by kdaniely         ###   ########.fr       */
+/*   Created: 2024/07/30 00:06:28 by kdaniely          #+#    #+#             */
+/*   Updated: 2024/07/30 19:22:42 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef WRONGANIMAL_H
+# define WRONGANIMAL_H
 
 # include <string>
+# include "defines.h"
 
-# define BLUE "\033[34m"
-# define GREEN "\033[32m"
-# define YELLOW "\033[33m"
-# define RED "\033[31m"
-# define CYAN "\033[36m"
-# define RESET "\033[0m"
-
-class Animal
+class WrongAnimal
 {
 protected:
 	std::string	type;
 public:
-	Animal(void);
-	Animal(const std::string type);
-	Animal(const Animal& other);
+	WrongAnimal(void);
+	WrongAnimal(const std::string type);
+	WrongAnimal(const WrongAnimal& other);
 
-	Animal&	operator=(const Animal& other);
-	virtual ~Animal();
+	WrongAnimal&	operator=(const WrongAnimal& other);
+	~WrongAnimal();
 
-	virtual void	makeSound(void);
+	void	makeSound(void);
 };
 
 #endif

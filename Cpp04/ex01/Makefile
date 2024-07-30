@@ -1,10 +1,12 @@
-NAME	=	ex00
+NAME	=	ex01
 
 BUILD	=	build
 
-SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp \
+			Brain.cpp
 
-INC		=	Animal.h Cat.h Dog.h WrongCat.h WrongAnimal.h
+INC		=	Animal.h Cat.h Dog.h WrongCat.h WrongAnimal.h includes/defines.h \
+			Brain.h
 
 OBJS	=	$(patsubst %.cpp, $(BUILD)/%.o, $(SRC))
 
@@ -16,7 +18,7 @@ CXX			=	c++
 
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 
-INCFLAGS	=	-I .
+INCFLAGS	=	-I. -Iincludes
 
 # Colors
 
