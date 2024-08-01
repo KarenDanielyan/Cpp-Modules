@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdaniely <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 19:48:06 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/31 20:35:45 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/01 21:21:36 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,15 @@
 
 Character::Character(void): _name("bob")
 {
+	for (int i = 0; i < 4; i ++)
+		_inventory[i] = NULL;
 	std::cout << GREEN << CHAR_DEFAULT << RESET << std::endl;
 }
 
 Character::Character(const std::string& name): _name(name)
 {
+	for (int i = 0; i < 4; i ++)
+		_inventory[i] = NULL;
 	std::cout << GREEN << CHAR_PARAM << RESET << std::endl;
 }
 
@@ -61,9 +65,9 @@ void	Character::equip(AMateria* m)
 {
 	int	i;
 
-	for (i = 0; _inventory[i] != NULL && i < 4; i ++)
+	for (i = 0; i < 4 && _inventory[i] != NULL; i ++)
 		;
-	if (_inventory[i] != NULL)
+	if (i > 3 || _inventory[i] != NULL)
 		std::cout << YELLOW << CHAR_EQUIP_WARN << RESET << std::endl;
 	else
 	{

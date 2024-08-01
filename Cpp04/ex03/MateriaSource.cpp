@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdaniely <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 20:30:14 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/31 21:47:20 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/01 21:02:54 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 MateriaSource::MateriaSource()
 {
+	for (int i = 0; i < 4; i ++)
+		_inventory[i] = NULL;
 	std::cout << GREEN << MATS_DEFAULT << RESET << std::endl;
 }
 
