@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 15:39:18 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/30 00:14:12 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:32:10 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int	main(void)
 	std::cout << "Wrong Cat: ";
 	p_wrong->makeSound();
 	std::cout << "- - - - - - - - - -" << std::endl;
+	delete p_wrong;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 00:06:28 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/30 00:13:44 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:32:46 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	WrongAnimal(const WrongAnimal& other);
 
 	WrongAnimal&	operator=(const WrongAnimal& other);
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 
 	void	makeSound(void);
 };
