@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 15:39:18 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/30 20:47:23 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:34:33 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,10 @@
 #include "Cat.h"
 #include "Dog.h"
 
-void	atexit()
-{
-	system("leaks ex01");
-}
-
 int	main(void)
 {
 	Animal*	animals[100];
 
-	std::atexit(&atexit);
 	for (int i = 0; i < 50; i++)
 		animals[i] = new Cat();
 	for (int i = 50; i < 100; i++)
