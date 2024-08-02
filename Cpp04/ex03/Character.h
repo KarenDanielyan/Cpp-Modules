@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdaniely <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 19:30:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/07/31 19:52:14 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:30:21 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class	Character : public ICharacter
 private:
 	std::string	_name;
 	AMateria*	_inventory[4];
+
+	bool		inInventory(AMateria *m) const;
 public:
 	Character();
 	Character(const std::string& name);

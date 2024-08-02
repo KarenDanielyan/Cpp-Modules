@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:49:19 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/01 21:22:03 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:36:45 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,25 @@
 #include "Character.h"
 #include "Ice.h"
 #include "Cure.h"
+#include <iostream>
 
 int main()
 {	
-	IMateriaSource*	src = new MateriaSource();
-	Ice*			ice = new Ice();
-	AMateria*		tmp;
-
-	src->learnMateria(ice);
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	src->learnMateria(ice);
-	src->learnMateria(ice);
 	ICharacter* me = new Character("me");
-	
+	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	me->unequip(3);
-	delete tmp;
-	tmp = src->createMateria("ice");
-	me->unequip(-12);
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	std::cout << std::endl;
 
 	delete bob;
 	delete me;
 	delete src;
-
-	return (0);
 }
