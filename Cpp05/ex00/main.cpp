@@ -6,7 +6,7 @@
 /*   By: kdaniely <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 20:06:21 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/07 14:38:18 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/07 15:46:22 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,5 @@ int main(void)
 			std::cerr << e.what() << std::endl;
 		}
 	}
-	return EXIT_SUCCESS;
+	return (EXIT_SUCCESS);
 }
