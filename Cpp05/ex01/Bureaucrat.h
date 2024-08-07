@@ -6,7 +6,7 @@
 /*   By: kdaniely <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 20:06:04 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/07 14:31:09 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/07 18:27:33 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 const int	MIN_GRADE = 150;
 const int	MAX_GRADE = 1;
+
+class	Form;
 
 class	Bureaucrat
 {
@@ -41,6 +43,8 @@ public:
 
 	void		incrementGrade(void);
 	void		decrementGrade(void);
+
+	void		signForm(Form& form);
 
 	class	GradeTooHighException : public std::exception
 	{

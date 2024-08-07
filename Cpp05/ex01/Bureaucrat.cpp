@@ -6,11 +6,12 @@
 /*   By: kdaniely <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 13:59:58 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/07 15:39:43 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/07 18:33:31 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.h"
+#include "Form.h"
 
 Bureaucrat::Bureaucrat(void): _name("Marvin"), _grade(150) {}
 
@@ -65,6 +66,21 @@ void	Bureaucrat::decrementGrade(void)
 {
 	if (++_grade > MIN_GRADE)
 		throw GradeTooLowException();
+}
+
+void	Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() \
+			<< std::endl;
+	}
+	catch (GradeTooLowException& e)
+	{
+		std::cout << this->getName() << " couldn't sign " \
+			<< form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 const char*	Bureaucrat::GradeTooHighException::what(void) const throw()
