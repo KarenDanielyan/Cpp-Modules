@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 20:06:04 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/07 20:03:44 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/08 19:43:55 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ public:
 	void		decrementGrade(void);
 
 	void		signForm(AForm& form);
+	void		executeForm(AForm const & form);
 
 	class	GradeTooHighException : public std::exception
 	{

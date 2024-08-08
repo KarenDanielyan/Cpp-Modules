@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 15:45:03 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/07 20:09:00 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/08 16:45:11 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 
 	AForm&	operator=(const AForm& other);
 
-	~AForm();
+	virtual ~AForm();
 
 	std::string	getName(void) const;
 	bool		getIsSigned(void) const;
@@ -51,6 +51,11 @@ public:
 			const char*	what(void) const throw();
 	};
 	class	GradeTooLowException : public std::exception
+	{
+		public:
+			const char*	what(void) const throw();
+	};
+	class	ExecuteOnUnsignedException : public std::exception
 	{
 		public:
 			const char*	what(void) const throw();
