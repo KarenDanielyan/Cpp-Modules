@@ -2,9 +2,9 @@ NAME	=	convert
 
 BUILD	=	build
 
-SRC		=	main.cpp
+SRC		=	main.cpp Application.cpp ScalarConverter.cpp
 
-INC		=	Application.h
+INC		=	Application.h ScalarConverter.h
 
 OBJS	=	$(patsubst %.cpp, $(BUILD)/%.o, $(SRC))
 
