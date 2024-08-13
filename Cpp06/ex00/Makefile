@@ -1,10 +1,10 @@
-NAME	=	Bureaucrat
+NAME	=	convert
 
 BUILD	=	build
 
-SRC		=	main.cpp Bureaucrat.cpp
+SRC		=	main.cpp
 
-INC		=	Bureaucrat.h
+INC		=	Application.h
 
 OBJS	=	$(patsubst %.cpp, $(BUILD)/%.o, $(SRC))
 
