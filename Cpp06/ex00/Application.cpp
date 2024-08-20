@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 19:52:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/20 17:42:08 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/21 01:48:02 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,8 @@ Application*	Application::createApplication(int ac, char **av)
 void	Application::run(void)
 {
 	std::string	input(_av[1]);
-	size_t		pos;
 	int			flags;
 
-	pos = 0;
 	flags = 0;
 	if (input == "nanf" || input == "+inff" || input == "-inff")
 		flags = FLOAT | LITERAL;
@@ -54,45 +52,6 @@ void	Application::run(void)
 	ScalarConverter::convert(input, flags);
 }
 
-static int	validate(const std::string& input)
-{
-	size_t	idx;
-	int		flags;
-
-	idx = 0;
-	flags = 0;
-	if (input[0] == '-' || input[0] == '+')
-		idx ++;
-	while (idx != std::string::npos)
-	{
-		switch(input[idx])
-		{
-			case 'f':
-				if (idx != input.length() - 1)
-					throw Application::BadArgumentException();
-				else
-					flags |= FLOAT;
-				break ;
-			case '.':
-				if (flags & DOUBLE || !std::isdigit(input[idx + 1]))
-					throw Application::BadArgumentException();
-				else
-					flags |= DOUBLE;
-				break ;
-			default :
-				if ((std::isalpha(input[idx]) && input.length() != 1) || \
-					)
-					throw Application::BadArgumentException();
-				else
-					flags |= CHAR;
-				break ;
-		}
-		if (idx != std::string::npos)
-			idx ++;
-		idx = input.find_first_not_of("0123456789", idx);
-	}
-	return (flags);
-}
 
 const char*	Application::BadArgumentException::what(void) const throw()
 {
@@ -104,4 +63,43 @@ const char*	Application::InvalidNumberArgumentsException::what(void) const throw
 	return ("Error: Invalid number of arguments");
 }
 
+static int	validate(const std::string& input)
+{
+	int	flags;
 
+	flags = 0;
+	if (input.length() == 1 && \
+		(std::isprint(input[0]) && !std::isdigit(input[0])))
+		return (CHAR);
+	for (size_t idx = 0; idx < input.length(); \
+		idx = input.find_first_not_of("0123456789", idx))
+	{
+		switch (input[idx])
+		{
+			case '-':
+			case '+':
+				if (flags & SIGNED || input.length() == 1)
+					throw Application::BadArgumentException();
+				idx ++;
+				flags |= SIGNED;
+				break ;
+			case '.' :
+				if (flags & DOUBLE || idx == 0 || !std::isdigit(input[idx - 1]) || \
+					!std::isdigit(input[idx + 1]))
+					throw Application::BadArgumentException();
+				flags |= DOUBLE;
+				idx ++;
+				break ;
+			case 'f' :
+				if (idx != input.length() - 1)
+					throw Application::BadArgumentException();
+				flags |= FLOAT;
+				idx ++;
+				break ;
+			default :
+				if (!std::isdigit(input[idx]))
+					throw Application::BadArgumentException();
+		}
+	}
+	return (flags | INT);
+}

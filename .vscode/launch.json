@@ -30,8 +30,8 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/Cpp02/ex03/bsp",
-      "args": [],
+      "program": "${workspaceFolder}/Cpp06/ex00/convert",
+      "args": ["-123123"],
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
