@@ -6,13 +6,15 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 19:52:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/16 17:20:15 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:42:08 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Application.h"
 #include "ScalarConverter.h"
 #include <iostream>
+
+static int	validate(const std::string& input);
 
 Application*	Application::_instance = NULL;
 
@@ -48,10 +50,48 @@ void	Application::run(void)
 	else if (input == "nan" || input == "+inf" || input == "-inf")
 		flags  = DOUBLE | LITERAL;
 	else
-	{
-
-	}
+		flags = validate(input);
 	ScalarConverter::convert(input, flags);
+}
+
+static int	validate(const std::string& input)
+{
+	size_t	idx;
+	int		flags;
+
+	idx = 0;
+	flags = 0;
+	if (input[0] == '-' || input[0] == '+')
+		idx ++;
+	while (idx != std::string::npos)
+	{
+		switch(input[idx])
+		{
+			case 'f':
+				if (idx != input.length() - 1)
+					throw Application::BadArgumentException();
+				else
+					flags |= FLOAT;
+				break ;
+			case '.':
+				if (flags & DOUBLE || !std::isdigit(input[idx + 1]))
+					throw Application::BadArgumentException();
+				else
+					flags |= DOUBLE;
+				break ;
+			default :
+				if ((std::isalpha(input[idx]) && input.length() != 1) || \
+					)
+					throw Application::BadArgumentException();
+				else
+					flags |= CHAR;
+				break ;
+		}
+		if (idx != std::string::npos)
+			idx ++;
+		idx = input.find_first_not_of("0123456789", idx);
+	}
+	return (flags);
 }
 
 const char*	Application::BadArgumentException::what(void) const throw()
