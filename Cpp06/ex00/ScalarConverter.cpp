@@ -6,12 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 20:56:14 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/21 16:08:35 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/21 18:23:47 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.h"
 #include <iostream>
+#include <string>
+#include <strstream>
 #include <climits>
 
 static void	convert_literals(std::string &input, int flags)
@@ -32,6 +34,37 @@ static void	convert_literals(std::string &input, int flags)
 		std::cout << std::endl;
 		std::cout << "Double: " << input.substr(0, pos) << std::endl;
 	}
+}
+
+static void	convert_float(double d)
+{
+	std::ostrstream	str;
+	std::string		input;
+
+	if (d > __FLT_MAX__ || d < -__FLT_MAX__)
+		std::cout << "Impossible" << std::endl;
+	else
+	{
+		str << d;
+		input = str.str();
+		if (input.find('.') != std::string::npos)
+			std::cout << static_cast<float>(d) << "f" << std::endl;
+		else
+			std::cout << static_cast<float>(d) << ".0f" << std::endl;
+	}
+}
+
+static void	convert_double(double d)
+{
+	std::ostrstream	str;
+	std::string		input;
+	
+	str << d;
+	input = str.str();
+	if (input.find('.') != std::string::npos)
+		std::cout << d << std::endl;
+	else
+		std::cout << d << ".0" << std::endl;
 }
 
 void	ScalarConverter::convert(std::string& input, int flags)
@@ -57,18 +90,8 @@ void	ScalarConverter::convert(std::string& input, int flags)
 	else
 		std::cout << static_cast<int>(d) << std::endl;
 	std::cout << "Float: ";
-	if (d > __FLT_MAX__ || d < -__FLT_MAX__)
-		std::cout << "Impossible" << std::endl;
-	else
-	{
-		if (input.find('.') != std::string::npos)
-			std::cout << static_cast<float>(d) << "f" << std::endl;
-		else
-			std::cout << static_cast<float>(d) << ".0f" << std::endl;
-	}
-	if (input.find('.') != std::string::npos)
-		std::cout <<"Double: " << d << std::endl;
-	else
-		std::cout << "Double: " << d << ".0" << std::endl;
+	convert_float(d);
+	std::cout << "Double: ";
+	convert_double(d);
 	
 }
