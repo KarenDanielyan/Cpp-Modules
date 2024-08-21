@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 20:56:14 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/21 02:23:22 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/21 16:08:35 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ScalarConverter::convert(std::string& input, int flags)
 	double	d;
 
 	if (flags & LITERAL)
-		convert_literals(input, flags);
+		return (convert_literals(input, flags));
 	if (flags & CHAR)
 		d = static_cast<double>(input[0]);
 	else
@@ -60,6 +60,15 @@ void	ScalarConverter::convert(std::string& input, int flags)
 	if (d > __FLT_MAX__ || d < -__FLT_MAX__)
 		std::cout << "Impossible" << std::endl;
 	else
-		std::cout << static_cast<float>(d) << std::endl;
-	std::cout << "Double: " << d << std::endl;
+	{
+		if (input.find('.') != std::string::npos)
+			std::cout << static_cast<float>(d) << "f" << std::endl;
+		else
+			std::cout << static_cast<float>(d) << ".0f" << std::endl;
+	}
+	if (input.find('.') != std::string::npos)
+		std::cout <<"Double: " << d << std::endl;
+	else
+		std::cout << "Double: " << d << ".0" << std::endl;
+	
 }
