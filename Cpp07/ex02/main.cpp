@@ -6,12 +6,12 @@
 /*   By: kdaniely <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 20:15:07 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/22 20:15:27 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/22 20:57:25 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <Array.hpp>
+#include <Array.h>
 
 #define MAX_VAL 750
 

@@ -4,7 +4,7 @@ BUILD	=	build
 
 SRC		=	main.cpp
 
-INC		=	Array.hpp
+INC		=	Array.h
 
 OBJS	=	$(patsubst %.cpp, $(BUILD)/%.o, $(SRC))
 

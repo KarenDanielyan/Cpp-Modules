@@ -6,12 +6,12 @@
 /*   By: kdaniely <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 20:15:39 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/08/22 20:49:18 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/08/22 20:56:02 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#ifndef ARRAY_H
+# define ARRAY_H
 
 template <typename T>
 class	Array
@@ -80,7 +80,20 @@ Array<T>&	Array<T>::operator=(const Array& other)
 	return (*this);
 }
 
-template <type
-const T&
+template <typename T>
+const T&	Array<T>::operator[](size_t index) const
+{
+	if (index >= _size)
+		throw std::out_of_range("Index out of range!!!");
+	return (_buf[index]);
+}
+
+template <typename T>
+T&	Array<T>::operator[](size_t index)
+{
+	if (index >= _size)
+		throw std::out_of_range("Index out of range!!!");
+	return (_buf[index]);
+}
 
 #endif
