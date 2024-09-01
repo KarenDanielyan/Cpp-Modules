@@ -2,9 +2,9 @@ NAME	=	btc
 
 BUILD	=	build
 
-SRC		=	main.cpp BitcoinExchange.cpp
+SRC		=	main.cpp App.cpp BitcoinExchange.cpp
 
-INC		=	BitcoinExchange.hpp
+INC		=	BitcoinExchange.hpp App.hpp
 
 OBJS	=	$(patsubst %.cpp, $(BUILD)/%.o, $(SRC))
 

@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   App.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 02:34:46 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/09/01 17:30:12 by kdaniely         ###   ########.fr       */
+/*   Created: 2024/09/01 14:58:46 by kdaniely          #+#    #+#             */
+/*   Updated: 2024/09/01 15:06:56 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "BitcoinExchange.hpp"
+#ifndef APP_HPP
+# define APP_HPP
 
-int	main(void)
-{
-	try
-	{
-		BitcoinExchange	btc;
+# include "BitcoinExchange.hpp"
 
-		std::cout << btc.getRate("2010-12-10,100") << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	return (0);
-}
+#endif
