@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 02:34:46 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/09/01 17:30:12 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/09/01 18:10:16 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void)
 	{
 		BitcoinExchange	btc;
 
-		std::cout << btc.getRate("2010-12-10,100") << std::endl;
+		std::cout << btc.getRate("2024-12-02,-10") << std::endl;
 	}
 	catch(const std::exception& e)
 	{

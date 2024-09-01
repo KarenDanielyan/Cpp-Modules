@@ -2,7 +2,7 @@ NAME	=	btc
 
 BUILD	=	build
 
-SRC		=	main.cpp App.cpp BitcoinExchange.cpp
+SRC		=	main.cpp BitcoinExchange.cpp App.cpp
 
 INC		=	BitcoinExchange.hpp App.hpp
 
