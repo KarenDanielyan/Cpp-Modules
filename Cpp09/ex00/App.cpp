@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:59:50 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/09/01 18:46:48 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:28:46 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ App::App(const char *file) : _file(file)
 App::~App()
 {
 	_file.close();
-	delete [] _instance;
+	_instance = NULL;
 }
 
 App*	App::createApp(int ac, char **av)
@@ -45,22 +45,60 @@ App*	App::createApp(int ac, char **av)
 	return (_instance);
 }
 
+int	App::_validateLine(std::string const & line) const
+{
+	if (!Utils::validateDate(line.substr(0, 10)))
+		return (BadDate);
+	else if (line[10] != ' ' || line[11] != '|' || line[12] != ' ')
+		return (BadEntry);
+	else if (!Utils::validateRate(line.substr(13)))
+		return (BadValue);
+	return (Success);
+}
+
 void	App::run()
 {
 	std::string	line;
 	double		value;
+	time_t		time;
 
 	while (std::getline(_file, line))
 	{
+		int	exitCode;
+
 		try
 		{
-			value = _btc.getRate(line);
-			std::cout << value << std::endl;
+			exitCode = this->_validateLine(line);
+			switch (exitCode)
+			{
+				case BadDate:
+					throw (std::runtime_error("Error: Bad Input => " + line.substr(0, 10)));
+					break ;
+				case BadValue:
+					throw (std::runtime_error("Error: Excpected a positive integer!"));
+					break ;
+				case BadEntry:
+					throw (std::runtime_error("Error: Invalid entry!"));
+					break ;
+				case Success:
+					time = Utils::convertToEpoch(line.substr(0, 10));
+					value = std::atof(line.substr(13).c_str());
+					if (value > 1000)
+						throw (std::runtime_error("Error: Value too large!"));
+					std::cout << line.substr(0, 10) << " => " << value << \
+						" = " << _btc.getRate(time, value) << std::endl;
+					break ;
+			}
 		}
 		catch (std::exception &e)
 		{
 			std::cerr << e.what() << std::endl;
 		}
 	}
+}
+
+void	App::destroyApp()
+{
+	delete _instance;
 }
 

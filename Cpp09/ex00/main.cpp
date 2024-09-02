@@ -6,20 +6,21 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 02:34:46 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/09/01 18:10:16 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/09/02 15:51:42 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "BitcoinExchange.hpp"
+#include "App.hpp"
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	try
 	{
-		BitcoinExchange	btc;
+		App*	app = App::createApp(ac, av);
 
-		std::cout << btc.getRate("2024-12-02,-10") << std::endl;
+		app->run();
+		App::destroyApp();
 	}
 	catch(const std::exception& e)
 	{

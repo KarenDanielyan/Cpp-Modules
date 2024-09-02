@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 02:52:39 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/09/01 16:17:46 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:02:52 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,20 @@ public:
 	BitcoinExchange();
 	~BitcoinExchange();
 
-	double	getRate(std::string const & entry) const;
+	double	getRate(time_t time, double value) const;
+};
+
+class	Utils
+{
+	private:
+		Utils();
+		Utils(const Utils& other);
+		Utils&	operator=(const Utils& other);
+		~Utils();
+	public:
+		static bool		validateDate(std::string const & date);
+		static bool		validateRate(std::string const & rate);
+		static time_t	convertToEpoch(std::string const & date);
 };
 
 #endif

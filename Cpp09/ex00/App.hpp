@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:58:46 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/09/01 18:36:14 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:20:05 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,16 @@ private:
 	App&	operator=(const App& other);
 
 	~App(void);
+
+	int	_validateLine(std::string const & line) const;
+	
+	enum	_Error_Code
+	{
+		BadDate = 1,
+		BadValue = 2,
+		BadEntry = 3,
+		Success = 0
+	};
 public:
 	static App*	createApp(int ac, char **av);
 	static void	destroyApp();
