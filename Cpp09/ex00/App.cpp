@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:59:50 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/09/02 16:28:46 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/09/18 15:21:52 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,11 @@ void	App::run()
 	double		value;
 	time_t		time;
 
+	if (std::getline(_file, line))
+	{
+		if (line != "date | value")
+			throw (std::runtime_error("Error: Invalid header!"));
+	}
 	while (std::getline(_file, line))
 	{
 		int	exitCode;
