@@ -30,8 +30,8 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/Cpp06/ex02/identify",
-      "args": [],
+      "program": "${workspaceFolder}/Cpp09/ex01/RPN",
+      "args": ["1 2 +"],
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
