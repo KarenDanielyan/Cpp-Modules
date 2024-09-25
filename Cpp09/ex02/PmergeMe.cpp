@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 19:38:07 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/09/24 16:47:40 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:47:42 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void	PmergeMe::sort(void)
 		std::cout << *it << " ";
 	std::cout << std::endl;
 	start = _getTime();
-	_vsort();
+	_sort(_vbuf);
 	_vsort_time = _getTime() - start;
 	start = _getTime();
-	_dsort();
+	_sort(_dbuf);
 	_dsort_time = _getTime() - start;
 	std::cout << "After: ";
 	for (std::vector<int>::iterator it = _vbuf.begin(); it != _vbuf.end(); it++)
@@ -69,16 +69,6 @@ void	PmergeMe::sort(void)
 		_dfill_time << " us" << std::endl;
 	std::cout << "Time to sort deque of " << size << " elements: " << \
 		_dsort_time << " us" << std::endl;
-}
-
-void	PmergeMe::_vsort(void)
-{
-	std::sort(_vbuf.begin(), _vbuf.end());
-}
-
-void	PmergeMe::_dsort(void)
-{
-	std::sort(_dbuf.begin(), _dbuf.end());
 }
 
 /* Get time in ms. */
