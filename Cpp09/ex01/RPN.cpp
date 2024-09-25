@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:20:19 by kdaniely          #+#    #+#             */
-/*   Updated: 2024/09/18 18:17:55 by kdaniely         ###   ########.fr       */
+/*   Updated: 2024/09/25 18:33:48 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void	RPN::calculate(void)
 					_stack.push(lhs * rhs);
 					break;
 				case '/':
+					if (rhs == 0)
+						throw std::runtime_error(ERROR_MSG);
 					_stack.push(lhs / rhs);
 					break;
 			}
